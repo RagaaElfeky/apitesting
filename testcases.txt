@@ -1,0 +1,74 @@
+1- GET /api/v1/Authors
+
+1-test case 1
+
+API :GET/api/v1/Authers
+Test Case: response should be 200 OK
+ Expected Result: 200 OK
+ Actual Result: 200 OK
+ Status: Pass
+
+2- test case 2
+
+PAI: GET /api/v1/Authors
+ Test Case: response should be contain , id, idBook, firstName, lastName
+ Expected Result: response contain  id, idBook, firstName, lastName
+ Actual Result:response contain id, idBook, firstName, lastName
+ Status: Pass
+
+
+2 - POST /api/v1/Authors
+
+
+1-test case 1
+API :POST/api/v1/Authers
+Test Case: response should be 201 created
+ Expected Result: 201 created
+ Actual Result: 200 OK
+ Status: fail
+
+
+
+2-test case 2
+API :POST/api/v1/Authers
+Test Case: response should be 400 Bad Reques
+ Expected Result:400 Bad Reques
+ Actual Result: 400 Bad Reques
+ Status: pass
+
+3- GET /api/v1/Authors/authors/books/{idBook}
+
+test case 1
+
+API :GET /api/v1/Authors/authors/books/{idBook}
+Test Case:  all returned results in response body should contain idBook = 1
+ Expected Result:  all returned results in response body should contain idBook = 1
+ Actual Result:  all returned results in response body should contain idBook = 1
+ Status: Pass
+
+
+4- PUT /api/v1/Authors/{id}
+
+test case 1
+
+API : PUT /api/v1/Authors/{id}
+Test Case: response should be data is updated successfull
+ Expected Result: data in response is updated successfull
+ Actual Result: data in response is updated successfull
+ Status: pass
+
+
+5- GET /api/v1/Authors/{id}
+
+test case 1
+
+
+API :GET /api/v1/Authors/{id}
+Test Case: response should be The author's data is changed in GET request ,
+ it will occurred by PUT request
+ Expected Result:  author's data is changed
+ Actual Result:  author's data isn't changed
+Status: Fail
+
+
+

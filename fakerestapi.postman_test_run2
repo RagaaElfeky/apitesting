@@ -1,0 +1,270 @@
+{
+	"id": "8c0b1b7c-76d4-4286-a6e4-2a2f546791c9",
+	"name": "fakerestapi",
+	"timestamp": "2022-11-15T21:49:58.889Z",
+	"collection_id": "13866280-1a6d7aab-a195-4943-84ee-3b2e8161fbc1",
+	"folder_id": 0,
+	"environment_id": "0",
+	"totalPass": 12,
+	"totalFail": 5,
+	"results": [
+		{
+			"id": "b4cff955-832b-4c89-8eeb-8e4a8730345d",
+			"name": "http://fakerestapi.azurewebsites.net/api/v1/Authors",
+			"url": "http://fakerestapi.azurewebsites.net/api/v1/Authors",
+			"time": 813,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Status code is 200": true,
+				"Status code is Ok": true,
+				"object should be contain id,idBook,firstName,lastName": true
+			},
+			"testPassFailCounts": {
+				"Status code is 200": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Status code is Ok": {
+					"pass": 1,
+					"fail": 0
+				},
+				"object should be contain id,idBook,firstName,lastName": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				813
+			],
+			"allTests": [
+				{
+					"Status code is 200": true,
+					"Status code is Ok": true,
+					"object should be contain id,idBook,firstName,lastName": true
+				}
+			]
+		},
+		{
+			"id": "88b934ef-0807-4f96-affb-7b8906892e74",
+			"name": "http://fakerestapi.azurewebsites.net/api/v1/Authors",
+			"url": "http://fakerestapi.azurewebsites.net/api/v1/Authors",
+			"time": 175,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Status code name has string": false,
+				"Status code is 201": false,
+				"firstName is Ahmed": true,
+				"LastName is Mohammed": true
+			},
+			"testPassFailCounts": {
+				"Status code name has string": {
+					"pass": 0,
+					"fail": 1
+				},
+				"Status code is 201": {
+					"pass": 0,
+					"fail": 1
+				},
+				"firstName is Ahmed": {
+					"pass": 1,
+					"fail": 0
+				},
+				"LastName is Mohammed": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				175
+			],
+			"allTests": [
+				{
+					"Status code name has string": false,
+					"Status code is 201": false,
+					"firstName is Ahmed": true,
+					"LastName is Mohammed": true
+				}
+			]
+		},
+		{
+			"id": "bad23bbc-2cae-475f-a26e-67b70d978837",
+			"name": "http://fakerestapi.azurewebsites.net/api/v1/Authors",
+			"url": "http://fakerestapi.azurewebsites.net/api/v1/Authors",
+			"time": 103,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Status code is 400": false
+			},
+			"testPassFailCounts": {
+				"Status code is 400": {
+					"pass": 0,
+					"fail": 1
+				}
+			},
+			"times": [
+				103
+			],
+			"allTests": [
+				{
+					"Status code is 400": false
+				}
+			]
+		},
+		{
+			"id": "e0317a05-3589-4e1f-8ca0-2994337d52a7",
+			"name": "http://fakerestapi.azurewebsites.net/api/v1/Authors/authors/books/1",
+			"url": "http://fakerestapi.azurewebsites.net/api/v1/Authors/authors/books/1",
+			"time": 123,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"idBook is equal 1": true
+			},
+			"testPassFailCounts": {
+				"idBook is equal 1": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				123
+			],
+			"allTests": [
+				{
+					"idBook is equal 1": true
+				}
+			]
+		},
+		{
+			"id": "1f175632-2702-4d19-a41e-d9d487022876",
+			"name": "http://fakerestapi.azurewebsites.net/api/v1/Authors/1",
+			"url": "http://fakerestapi.azurewebsites.net/api/v1/Authors/1",
+			"time": 168,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"id is  1": true,
+				"idBook is 1 ": true,
+				"firstName is  updated successfully": true,
+				"lastName is updated successfully": true
+			},
+			"testPassFailCounts": {
+				"id is  1": {
+					"pass": 1,
+					"fail": 0
+				},
+				"idBook is 1 ": {
+					"pass": 1,
+					"fail": 0
+				},
+				"firstName is  updated successfully": {
+					"pass": 1,
+					"fail": 0
+				},
+				"lastName is updated successfully": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				168
+			],
+			"allTests": [
+				{
+					"id is  1": true,
+					"idBook is 1 ": true,
+					"firstName is  updated successfully": true,
+					"lastName is updated successfully": true
+				}
+			]
+		},
+		{
+			"id": "7deb9e00-e772-411b-8f9a-66967527f26b",
+			"name": "http://fakerestapi.azurewebsites.net/api/v1/Authors/1",
+			"url": "http://fakerestapi.azurewebsites.net/api/v1/Authors/1",
+			"time": 97,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"id is  1": true,
+				"idBook is 1 ": true,
+				"firstName is  updated successfully": false,
+				"lastName is updated successfully": false
+			},
+			"testPassFailCounts": {
+				"id is  1": {
+					"pass": 1,
+					"fail": 0
+				},
+				"idBook is 1 ": {
+					"pass": 1,
+					"fail": 0
+				},
+				"firstName is  updated successfully": {
+					"pass": 0,
+					"fail": 1
+				},
+				"lastName is updated successfully": {
+					"pass": 0,
+					"fail": 1
+				}
+			},
+			"times": [
+				97
+			],
+			"allTests": [
+				{
+					"id is  1": true,
+					"idBook is 1 ": true,
+					"firstName is  updated successfully": false,
+					"lastName is updated successfully": false
+				}
+			]
+		}
+	],
+	"count": 1,
+	"totalTime": 1479,
+	"collection": {
+		"requests": [
+			{
+				"id": "b4cff955-832b-4c89-8eeb-8e4a8730345d",
+				"method": "GET"
+			},
+			{
+				"id": "88b934ef-0807-4f96-affb-7b8906892e74",
+				"method": "POST"
+			},
+			{
+				"id": "bad23bbc-2cae-475f-a26e-67b70d978837",
+				"method": "POST"
+			},
+			{
+				"id": "e0317a05-3589-4e1f-8ca0-2994337d52a7",
+				"method": "GET"
+			},
+			{
+				"id": "1f175632-2702-4d19-a41e-d9d487022876",
+				"method": "PUT"
+			},
+			{
+				"id": "7deb9e00-e772-411b-8f9a-66967527f26b",
+				"method": "GET"
+			}
+		]
+	}
+}

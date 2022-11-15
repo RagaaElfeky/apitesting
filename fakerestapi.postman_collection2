@@ -1,0 +1,402 @@
+{
+	"info": {
+		"_postman_id": "1a6d7aab-a195-4943-84ee-3b2e8161fbc1",
+		"name": "fakerestapi",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "13866280"
+	},
+	"item": [
+		{
+			"name": "http://fakerestapi.azurewebsites.net/api/v1/Authors",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"const resBody = pm.response.json();\r",
+							"\r",
+							"pm.test(\"Status code is 200\", function () {\r",
+							"   pm.expect(pm.response.code).to.equal(200);\r",
+							"  \r",
+							"});\r",
+							"/*console.log(pm.response.status)\r",
+							"console.log(pm.response.code)*/\r",
+							"pm.test(\"Status code is Ok\", function () {\r",
+							"     pm.expect(pm.response.status).to.equal(\"OK\");\r",
+							"});\r",
+							"pm.test(\"object should be contain id,idBook,firstName,lastName\",function(){\r",
+							"\r",
+							"        pm.expect(resBody[0]).to.have.property(\"id\");\r",
+							"          pm.expect(resBody[0]).to.have.property(\"idBook\");\r",
+							"             pm.expect(resBody[0]).to.have.property(\"firstName\");\r",
+							"                pm.expect(resBody[0]).to.have.property(\"lastName\");\r",
+							"    })\r",
+							"   \r",
+							"  \r",
+							"\r",
+							"  "
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://fakerestapi.azurewebsites.net/api/v1/Authors",
+					"protocol": "http",
+					"host": [
+						"fakerestapi",
+						"azurewebsites",
+						"net"
+					],
+					"path": [
+						"api",
+						"v1",
+						"Authors"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://fakerestapi.azurewebsites.net/api/v1/Authors",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code name has string\", function () {\r",
+							"\r",
+							"    pm.response.to.have.status(\"Created\");\r",
+							"});\r",
+							"pm.test(\"Status code is 201\", function () {\r",
+							"    pm.response.to.have.status(201);\r",
+							"});\r",
+							"pm.test(\"firstName is Ahmed\", function () {\r",
+							"    pm.expect(pm.response.text()).to.include(\"Ahmed\");\r",
+							"});\r",
+							"pm.test(\"LastName is Mohammed\", function () {\r",
+							"    pm.expect(pm.response.text()).to.include(\"Mohammed\");\r",
+							"});\r",
+							"\r",
+							"// firstName = ahmed, Lastname=Mohamed"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"id\": 1,\r\n  \"idBook\": 2,\r\n  \"firstName\": \"Ahmed\",\r\n  \"lastName\": \"Mohammed\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://fakerestapi.azurewebsites.net/api/v1/Authors",
+					"protocol": "http",
+					"host": [
+						"fakerestapi",
+						"azurewebsites",
+						"net"
+					],
+					"path": [
+						"api",
+						"v1",
+						"Authors"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://fakerestapi.azurewebsites.net/api/v1/Authors",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"\r",
+							"pm.test(\"Status code is 400\", function () {\r",
+							"    pm.response.to.have.status(400);\r",
+							"});\r",
+							"\r",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"id\": 1,\r\n  \"idBook\": 2\r\n  \r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://fakerestapi.azurewebsites.net/api/v1/Authors",
+					"protocol": "http",
+					"host": [
+						"fakerestapi",
+						"azurewebsites",
+						"net"
+					],
+					"path": [
+						"api",
+						"v1",
+						"Authors"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://fakerestapi.azurewebsites.net/api/v1/Authors/authors/books/1",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"\r",
+							"\r",
+							"var jsonData = pm.response.json();\r",
+							"\r",
+							"\r",
+							"pm.test(\"idBook is equal 1\", function () {\r",
+							"   for(let x = 0 ; x< jsonData.length;x++){\r",
+							"       pm.expect(jsonData[x].idBook).to.equal(1);\r",
+							"   }\r",
+							"   \r",
+							"  \r",
+							"});\r",
+							"\r",
+							"\r",
+							"\r",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://fakerestapi.azurewebsites.net/api/v1/Authors/authors/books/1",
+					"protocol": "http",
+					"host": [
+						"fakerestapi",
+						"azurewebsites",
+						"net"
+					],
+					"path": [
+						"api",
+						"v1",
+						"Authors",
+						"authors",
+						"books",
+						"1"
+					],
+					"query": [
+						{
+							"key": "idBook",
+							"value": "1",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://fakerestapi.azurewebsites.net/api/v1/Authors/1",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							" var jsonData = pm.response.json();\r",
+							"pm.test(\"id is  1\", function () {\r",
+							"  \r",
+							"    pm.expect(jsonData.id).to.eql(1);\r",
+							"});\r",
+							"pm.test(\"idBook is 1 \", function () {\r",
+							"   \r",
+							"    pm.expect(jsonData.idBook).to.eql(1);\r",
+							"});\r",
+							"pm.test(\"firstName is  updated successfully\", function () {\r",
+							"   \r",
+							"    pm.expect(jsonData.firstName).to.eql(\"Samer\");\r",
+							"});\r",
+							"pm.test(\"lastName is updated successfully\", function () {\r",
+							"  \r",
+							"    pm.expect(jsonData.lastName).to.eql(\"Saed\");\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"id\": 1,\r\n  \"idBook\": 1,\r\n  \"firstName\": \"Samer\",\r\n  \"lastName\": \"Saed\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://fakerestapi.azurewebsites.net/api/v1/Authors/1",
+					"protocol": "http",
+					"host": [
+						"fakerestapi",
+						"azurewebsites",
+						"net"
+					],
+					"path": [
+						"api",
+						"v1",
+						"Authors",
+						"1"
+					],
+					"query": [
+						{
+							"key": "",
+							"value": "",
+							"disabled": true
+						},
+						{
+							"key": "",
+							"value": "",
+							"disabled": true
+						},
+						{
+							"key": "",
+							"value": "",
+							"disabled": true
+						},
+						{
+							"key": "",
+							"value": "",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://fakerestapi.azurewebsites.net/api/v1/Authors/1",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"id is  1\", function () {\r",
+							"    var jsonData = pm.response.json();\r",
+							"    pm.expect(jsonData.id).to.eql(1);\r",
+							"});\r",
+							"pm.test(\"idBook is 1 \", function () {\r",
+							"    var jsonData = pm.response.json();\r",
+							"    pm.expect(jsonData.idBook).to.eql(1);\r",
+							"});\r",
+							"pm.test(\"firstName is  updated successfully\", function () {\r",
+							"    var jsonData = pm.response.json();\r",
+							"    pm.expect(jsonData.firstName).to.eql(\"Samer\");\r",
+							"});\r",
+							"pm.test(\"lastName is updated successfully\", function () {\r",
+							"    var jsonData = pm.response.json();\r",
+							"    pm.expect(jsonData.lastName).to.eql(\"Saed\");\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://fakerestapi.azurewebsites.net/api/v1/Authors/1",
+					"protocol": "http",
+					"host": [
+						"fakerestapi",
+						"azurewebsites",
+						"net"
+					],
+					"path": [
+						"api",
+						"v1",
+						"Authors",
+						"1"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "id",
+			"value": "0",
+			"type": "string"
+		},
+		{
+			"key": "idBook",
+			"value": "0",
+			"type": "string"
+		},
+		{
+			"key": "frestName",
+			"value": "\" frestNam\"",
+			"type": "string"
+		},
+		{
+			"key": "lastName",
+			"value": "\"lastName \"",
+			"type": "string"
+		},
+		{
+			"value": "\"   \"",
+			"type": "string",
+			"disabled": true
+		}
+	]
+}
